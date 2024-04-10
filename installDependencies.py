@@ -1,7 +1,7 @@
 import subprocess
 
 def install_dependencies():
-    command = "pip install -q -U google-generativeai"
+    command = "pip3 install -q -U google-generativeai"
     process = subprocess.run(command.split(), capture_output=True, text=True)
     try:
         subprocess.check_call(["pip", "install", "-r", "static/requirements.txt"])
