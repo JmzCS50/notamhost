@@ -1,0 +1,251 @@
+/* Customized buttons for base.html */
+.submit {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  padding: 0.2em 0.5em;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border-color: #0400ff;
+  
+  transition: all 0.3s;
+}
+
+/* Hover animation for submit buttons */
+.submit:hover{
+  transform: translateY(-10px);
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* The button to delete destinations */
+.delete{
+  color: #000000;
+
+  margin-left: 4px;
+  background-image: url('images/minus.png');  
+  background-size: 50%;
+  border-width: 1px;
+  box-shadow: 0 0 0px 1px rgb(255, 0, 0);
+  background-position: center ;   
+  background-repeat: no-repeat;
+  border-color: rgb(255, 0, 0); 
+
+  width: 15px; 
+  height: 15px;  
+
+  border-radius: 50%; 
+  position: relative; 
+  top: -5px; 
+  right: 0px;
+
+  transition: all 0.2s;
+}
+
+.delete:hover{
+  background-color: #ff0000;
+  color: #ffffff;
+  border: 1px double #000000;
+  background-image: url('images/minusWhite.png'); 
+}
+
+
+/* Arrow to go back */
+#plane{
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;   
+  width: auto;
+  height: 40px;
+  transform: translate(20px, 20px) scaleX(-1);
+
+}
+
+/* Custom loading text in base.html */
+.custom-text {
+  position: fixed;
+  font-size: 24px; 
+  color: #000e78; 
+  font-weight: 500;
+
+  position: relative; 
+  top: 25px; 
+  right: -30px;
+  
+}
+
+/* To make the loading symbol */
+group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 65vh; 
+}
+
+group .ticks{
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  
+}
+
+group .ticks span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(30deg * var(--i)));
+}
+
+.ticks span::before{
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  width: 20px;
+  height: 75px;
+  background: #005eff6d;
+  border-radius: 50%;
+  animation: tickTock 2s linear infinite;
+  animation-delay: calc(0.05s * (var(--i)));
+}
+
+/* The animation of the symbol */
+@keyframes tickTock{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 100;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+/* Custom animation, change the hue of the color constantly */
+@keyframes changeColor {
+  0% {
+      filter: hue-rotate(0deg);
+  }
+  100%{
+      filter: hue-rotate(360deg);
+  }
+}
+
+/* Custom animation, change the opacity back from 0 to 100 and back to 0 */
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  50% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hidden text attribute for changing from input requesting, to loading, to display. */
+.hiddenObj {
+    display: none;
+}
+
+/* Classes for NOTAMs to be displayed in an accordion-style list */
+
+.accordion {
+  max-width: vw;
+}
+
+.accordion-item {
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+  
+  margin-bottom: 2px;
+}
+
+.accordion-header {
+  display: block;
+  background-color: #aeb2eb;
+  border-bottom: 3px solid #000000;
+  border-top: 3px solid #000000;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+
+  transition: all 0.1s;
+}
+
+.accordion-header:hover{
+  border-top: 4px solid #000000;
+  border-bottom: 4px solid #000000;
+  
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+.accordion-content {
+  display: none;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+/* Hide the checkbox visually */
+.accordion-item input {
+  position: absolute;
+}
+
+/* Use :checked pseudo-class to toggle content visibility */
+.accordion-item input:checked + .accordion-header + .accordion-content {
+  display: block;
+  border-bottom: 3px solid #000000;
+}
+
+/* Style for the custom checkbox */
+.custom-checkbox {
+  opacity: 0;
+  height: 0;
+}
+
+/* Style for the custom checkbox's visual representation */
+.custom-checkbox-label {
+  position: relative;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.custom-checkbox-label:before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 1px;
+  height: 10px;
+  border: 2px solid #333;
+}
+
+/* Style for the custom checkbox when checked */
+.custom-checkbox:checked + .custom-checkbox-label:before {
+  border: 2px solid #687df5; 
+}
+
+/* Styling for the dropdown menu */
+.dropdown {
+  display: none;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+	z-index: 1;
+	background-color: #fff;
+
+}
+
+.dropdown-option {
+    padding: 3px;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
