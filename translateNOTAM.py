@@ -1,4 +1,4 @@
-from google_ai_generativelanguage import google.generativeai as genai
+import google.generativeai as genai
 from credentials import GEMINI_API_KEY
         
 def callGemini(untranslated):
